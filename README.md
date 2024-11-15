@@ -72,3 +72,8 @@ python -m unittest discover -s tests -p "test_rufus.py"
 python -m unittest discover -s tests -p "test_parser.py"
 python -m unittest discover -s tests -p "test_crawler.py"
 ```
+
+### Future work on Rufus:
+- Add capabilities to fetch and donwload complex nested links
+- give more robust output maybe in CSVs
+- give an option to switch between different LLM API's i.e make the code dynamic to choose which LLM user wants to use eg. Llama family, Anthropic, OpenAI etc.  
