@@ -19,14 +19,14 @@ Rufus comes with a wide range of features that cater to a diverse set of users. 
 1. **Clone the Repository:**
 
     ```bash
-    git clone 
+    git clone https://github.com/pupscub/Rufus-Chima.git
     ```
 
 2. **Set Up Virtual Environment:**
 
     ```bash
     python3 -m venv venv
-    source venv/bin/activate  # Windows: venv\Scripts\activate
+    source venv/bin/activate  # For Windows use: venv\Scripts\activate
     ```
 
 3. **Install Dependencies:**
@@ -54,10 +54,9 @@ from RufusClient.client import RufusClient
 import json
 
 def main():
-    # instructions = "Find information about HR policies and FAQs."
     print("Welcome to RufusClient!")
-    url = input("Enter the URL you want to scrape: ")
-    instructions = input("Please enter the prompt: ")
+    url = input("Enter the URL you want to scrape: ") # enter the URL you want to scrape and know about
+    instructions = input("Please enter the prompt: ") # enter the prompt (sections you want to emphasize on)
     client = RufusClient(user_prompt=instructions)
     documents = client.scrape(url)
     print(json.dumps(documents, indent=4))
