@@ -1,4 +1,3 @@
-# test_rufus.py
 import os
 from dotenv import load_dotenv
 from RufusClient.parser import Parser
@@ -7,7 +6,6 @@ import json
 
 load_dotenv()
 
-# Sample HTML content
 sample_content = """
 <html>
 <head><title>Statistics Overview</title></head>
@@ -40,25 +38,20 @@ sample_content = """
 """
 
 
-# Sample user prompt
+
 sample_prompt = "Identify and extract all relevant sections related to standard deviation, including definitions, formulas, examples, and applications."
 
 
-# Initialize the parser
 api_key = os.getenv('OPENAI_API_KEY')
 
 parser = Parser(content=sample_content, user_prompt=sample_prompt, api_key=api_key)
 
-# Extract relevant sections
 extracted_data = parser.extract_relevant_sections()
 print("Extracted Data:")
 print(extracted_data)
 
-# Initialize the synthesizer with the extracted data
 synthesizer = Synthesizer(extracted_data=extracted_data, user_prompt=sample_prompt, api_key=api_key)
 
-# Synthesize the extracted data
 synthesized_data = synthesizer.synthesize()
 print("Synthesized Data:")
-# Output:
 print(json.dumps(synthesized_data, indent=4))
