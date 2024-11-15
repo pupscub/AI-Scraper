@@ -8,30 +8,58 @@ load_dotenv()
 
 sample_content = """
 <html>
-<head><title>Statistics Overview</title></head>
+<head><title>Machine Learning Fundamentals</title></head>
 <body>
-    <h1>Statistics Overview</h1>
-    <p>This page provides an overview of key statistical concepts.</p>
+    <h1>Machine Learning Algorithms Overview</h1>
+    <p>Exploring key machine learning concepts and algorithms.</p>
+    
     <div class="section">
-        <h2>Variance</h2>
-        <p>Variance measures the dispersion of a set of data points around their mean value.</p>
-        <p>The formula for variance (σ²) is: 
-           <em>σ² = Σ (xi - μ)² / N</em>, where <em>xi</em> is each value, <em>μ</em> is the mean, and <em>N</em> is the number of values.
-        </p>
-        <p>Variance is used to determine how much the data varies. A high variance indicates that data points are spread out over a wider range of values.</p>
+        <h2>Supervised Learning</h2>
+        <p>Supervised learning is a type of machine learning where algorithms are trained on labeled data.</p>
+        <p>Key algorithms include:</p>
+        <ul>
+            <li>Linear Regression</li>
+            <li>Logistic Regression</li>
+            <li>Support Vector Machines (SVM)</li>
+            <li>Decision Trees</li>
+        </ul>
+        <p>In supervised learning, the model learns from past data to predict future outcomes.</p>
     </div>
+    
     <div class="section">
-        <h2>Standard Deviation</h2>
-        <p>The standard deviation is the square root of variance and provides a measure of the average distance of each data point from the mean.</p>
+        <h2>Neural Networks</h2>
+        <p>Neural networks are computational models inspired by the human brain.</p>
+        <p>Key components include:</p>
+        <ul>
+            <li>Neurons</li>
+            <li>Layers (Input, Hidden, Output)</li>
+            <li>Activation Functions</li>
+            <li>Backpropagation</li>
+        </ul>
+        <p>Deep learning leverages complex neural network architectures.</p>
     </div>
+    
     <div class="section">
-        <h2>Examples of Variance</h2>
-        <p>For example, the variance of a dataset with values [2, 4, 4, 4, 5, 5, 7, 9] is calculated as follows...</p>
+        <h2>Model Evaluation</h2>
+        <p>Techniques for assessing machine learning model performance:</p>
+        <ul>
+            <li>Cross-Validation</li>
+            <li>Confusion Matrix</li>
+            <li>Precision and Recall</li>
+            <li>F1 Score</li>
+        </ul>
+        <p>Proper evaluation prevents overfitting and ensures model generalizability.</p>
     </div>
+    
     <div class="section">
-        <h2>Applications of Variance</h2>
-        <p>Variance is used in finance to measure the risk of a stock portfolio.</p>
-        <p>It is also utilized in machine learning algorithms for model evaluation.</p>
+        <h2>Emerging Trends</h2>
+        <p>Current advancements in machine learning include:</p>
+        <ul>
+            <li>Transformer Models</li>
+            <li>Federated Learning</li>
+            <li>Explainable AI</li>
+            <li>Reinforcement Learning</li>
+        </ul>
     </div>
 </body>
 </html>
@@ -39,8 +67,8 @@ sample_content = """
 
 
 
-sample_prompt = "Identify and extract all relevant sections related to standard deviation, including definitions, formulas, examples, and applications."
-
+# user prompt focusing on machine learning details
+sample_prompt = "Extract comprehensive information about machine learning algorithms, their types, key components, and emerging trends in the field."
 
 api_key = os.getenv('OPENAI_API_KEY')
 
