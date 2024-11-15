@@ -8,8 +8,8 @@ class TestParser(unittest.TestCase):
         <html>
     <body>
         <section class="faq">
-            <h2>What are Book Genres?</h2>
-            <p>Book genres are categories that classify literature based on style, tone, and content.</p>
+            <h2>Story of my life </h2>
+            <p>This is an interesting  autobiography of my life (lots of learning lession and fun anecdotes :P)</p>
         </section>
         <section class="pricing">
             <table>
@@ -30,12 +30,12 @@ class TestParser(unittest.TestCase):
     </body>
 </html>
         """
-        self.parser = Parser(content=self.sample_html, user_prompt="Find FAQs and pricing.", api_key="test_api_key")
+        self.parser = Parser(content=self.sample_html, user_prompt="what is the book about and what is the price.", api_key="test_api_key")
 
     @patch('RufusClient.parser.openai.ChatCompletion.create')
     def test_extract_relevant_sections(self, mock_openai_create):
         mock_openai_create.return_value = {
-            'choices': [{'message': {'content': 'FAQ: What is Rufus? Rufus is an intelligent web data extraction tool.'}}]
+            'choices': [{'message': {'content': 'what is the book about? and what is the price? The book is about me and price is 12$'}}]
         }
 
         extracted_text = self.parser.extract_relevant_sections()
@@ -43,11 +43,11 @@ class TestParser(unittest.TestCase):
 
     @patch('RufusClient.parser.Parser.extract_relevant_sections')
     def test_parse(self, mock_extract):
-        mock_extract.return_value = 'FAQ: What is Rufus? Rufus is an intelligent web data extraction tool.'
+        mock_extract.return_value = 'what is the book about? and what is the price? The book is about me and price is 12$.'
 
         data = self.parser.parse()
         self.assertIn('extracted_content', data)
-        self.assertEqual(data['extracted_content'], 'FAQ: What is Rufus? Rufus is an intelligent web data extraction tool.')
+        self.assertEqual(data['extracted_content'], 'what is the book about? and what is the price? The book is about me and price is 12$')
 
 if __name__ == "__main__":
     unittest.main()
