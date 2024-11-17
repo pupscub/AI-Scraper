@@ -6,8 +6,6 @@ Traditional web scraping tools often fall short when dealing with complex websit
 
 ![screenshot](RufusClientV2/assets/Rufusv2.png)
 
-## Features
-
 ## **Key Features**
 
 Rufus comes with a wide range of features that cater to a diverse set of users. Here are some of the key features:
