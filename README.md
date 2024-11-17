@@ -3,6 +3,9 @@
 Rufus is an intelligent web data extraction tool designed specifically for Retrieval-Augmented Generation (RAG) agents. In the complex landscape of web data collection, Rufus solves the critical challenge of retrieving meaningful and structured information from websites for AI and machine learning applications.
 Traditional web scraping tools often fall short when dealing with complex website structures, nested pages, and dynamically loaded content. Rufus revolutionizes this process by providing an AI-powered solution that intelligently crawls websites, selectively extracts relevant information, and synthesizes it into clean, structured documents ready for immediate use in LLM (Large Language Model) pipelines.
 
+
+![screenshot](RufusClientV2/assets/Rufusv2.png)
+
 ## Features
 
 ## **Key Features**
@@ -14,6 +17,7 @@ Rufus comes with a wide range of features that cater to a diverse set of users. 
 - **AI-Powered Document Synthesis**: Transform raw web content into structured, clean documents in formats like JSON and CSV, optimized for immediate integration with RAG systems.
 - **Robust Error Handling**: Gracefully manage challenges like inaccessible pages, changing website structures, and dynamic content loading and utilizes multithreading, allowing simultaneous crawling.
 - **Unit Test**: I've also included unit test for all the components in the RufusClient to test out new features/addition in future.
+
 ## Setup Instructions
 
 1. **Clone the Repository:**
