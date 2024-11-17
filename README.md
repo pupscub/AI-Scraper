@@ -46,7 +46,26 @@ Rufus comes with a wide range of features that cater to a diverse set of users. 
 
 ## Usage Example
 
+## Launching the Application
+
+To run RufusClientV2, navigate to the project directory and run the following command:
+
+```bash
+cd RufusClientV2
+streamlit run streamlit_app.py
+```
+
+
+## Usage
+After launching the application, open your web browser to the indicated address (typically http://localhost:8501). Use the sidebar to input the URL and fields you wish to scrape, then click the "Scrape" button to see results.
+
 ### Using RufusClient Directly
+
+```bash
+cd RufusClient
+python RufusTest.py
+```
+
 
 ```python
 # RufusTest.py
