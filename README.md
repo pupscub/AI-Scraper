@@ -6,7 +6,7 @@ Traditional web scraping tools often fall short when dealing with complex websit
 
 ![screenshot](RufusClientV2/assets/Rufusv2.png)
 
-## **Key Features**
+# **Key Features**
 
 Rufus comes with a wide range of features that cater to a diverse set of users. Here are some of the key features:
 
@@ -60,6 +60,9 @@ streamlit run streamlit_app.py
 
 ## Usage
 After launching the application, open your web browser to the indicated address (typically http://localhost:8501). Use the sidebar to input the URL and fields you wish to scrape, then click the "Scrape" button to see results.
+
+You can also paste your OpenAI API Key, Google Gemini API key, etc. through streamlit application
+The outputs will be stored in `Output` folder of in `RufusV2` folder.
 
 ### Using RufusClient Directly
 
