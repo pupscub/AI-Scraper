@@ -26,7 +26,7 @@ import os
 
 # Initialize Streamlit app
 st.set_page_config(page_title="Rufus", page_icon="scrape-master-main/assets/Chima.png")
-st.title("Rufus - Chima")
+st.title("Rufus: Intelligent Web Scrapper")
 
 # Initialize session state variables
 if 'scraping_state' not in st.session_state:
