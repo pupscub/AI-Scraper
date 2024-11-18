@@ -54,7 +54,7 @@ To run RufusClientV2, navigate to the project directory and run the following co
 
 ```bash
 cd RufusClientV2
-streamlit run streamlit_app.py
+streamlit run app.py
 ```
 
 
