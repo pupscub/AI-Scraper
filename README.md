@@ -8,12 +8,16 @@ Traditional web scraping tools often fall short when dealing with complex websit
 
 # **Key Features**
 
-Rufus comes with a wide range of features that cater to a diverse set of users. Here are some of the key features:
+RufusV2 comes with a wide range of features that cater to a diverse set of users. Here are some of the key features:
 
 - **Intelligent Web Crawling**: Dynamically navigate websites based on user-defined prompts, handling complex link structures and nested pages with advanced AI-driven link selection.
 - **Selective Content Extraction**: Focus on retrieving only the most relevant information based on specific user instructions, eliminating noise and irrelevant data.
 - **AI-Powered Document Synthesis**: Transform raw web content into structured, clean documents in formats like JSON and CSV, optimized for immediate integration with RAG systems.
-- **Robust Error Handling**: Gracefully manage challenges like inaccessible pages, changing website structures, and dynamic content loading and utilizes multithreading, allowing simultaneous crawling.
+- **Robust Error Handling**: Gracefully manage challenges like inaccessible pages, changing website structures, and dynamic content loading and utilizes multithreading, allowing simultaneous 
+- **Pagination**: Rufus can also intelligently handle pagination you can link the number of pages you want to scrape
+- **Multiple LLMs**: Rufus now has option to choose between multiple LLMs, Open AI family, xAI, Google's-Gemini through the interactive streamlit web application
+- **Costing**: With incorporation of multiple LLM choices (OpenAI, Google-Gemini, Grok) user can now see the overall price of scrapping a page based on the model they selected. 
+crawling.
 - **Unit Test**: I've also included unit test for all the components in the RufusClient to test out new features/addition in future.
 
 ## Setup Instructions
