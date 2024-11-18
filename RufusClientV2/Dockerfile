@@ -54,4 +54,4 @@ RUN apt-get update && apt-get dist-upgrade -y
 
 
 # Command to run the Streamlit app
-CMD ["streamlit", "run", "streamlit_app.py"]
+CMD ["streamlit", "run", "app.py"]
