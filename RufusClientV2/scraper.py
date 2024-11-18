@@ -162,30 +162,29 @@ def extract_keywords(user_input: str) -> list[str]:
         print("No valid candidates found.")
         return []
 
-# def create_dynamic_listing_model(field_names: List[str]) -> Type[BaseModel]:
-#     """
-#     Dynamically creates a Pydantic model based on provided fields.
-#     field_name is a list of names of the fields to extract from the markdown.
-#     """
-#     # Create field definitions using aliases for Field parameters
-#     field_definitions = {field: (str, ...) for field in field_names}
-#     # Dynamically create the model with all field
-#     return create_model('DynamicListingModel', **field_definitions)
-
-
 def create_dynamic_listing_model(field_names: List[str]) -> Type[BaseModel]:
     """
     Dynamically creates a Pydantic model based on provided fields.
     field_name is a list of names of the fields to extract from the markdown.
     """
     # Create field definitions using aliases for Field parameters
-    print(field_names)
-    field_names = extract_keywords(field_names)
-    print(field_names)
     field_definitions = {field: (str, ...) for field in field_names}
-    print(field_definitions)
     # Dynamically create the model with all field
     return create_model('DynamicListingModel', **field_definitions)
+
+
+# def create_dynamic_listing_model(field_names: List[str]) -> Type[BaseModel]:
+#     """
+#     Dynamically creates a Pydantic model based on provided fields.
+#     field_name is a list of names of the fields to extract from the markdown.
+#     """
+#     # Create field definitions using aliases for Field parameters
+#     print(field_names)
+#     field_names = extract_keywords(field_names)
+#     print(field_names)
+#     field_definitions = {field: (str, ...) for field in field_names}
+#     # Dynamically create the model with all field
+#     return create_model('DynamicListingModel', **field_definitions)
 
 def create_listings_container_model(listing_model: Type[BaseModel]) -> Type[BaseModel]:
     """
