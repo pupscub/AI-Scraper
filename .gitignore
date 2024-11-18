@@ -1,6 +1,5 @@
-# .gitignore
 venv/
 __pycache__/
 *.pyc
 .env
-
+RufusClientV2/output/

@@ -34,7 +34,8 @@ load_dotenv()
 
 
 # Set up the Chrome WebDriver options
-
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 def is_running_in_docker():
     """
@@ -133,16 +134,58 @@ def save_raw_data(raw_data: str, output_folder: str, file_name: str):
     return raw_output_path
 
 
+def extract_keywords(user_input: str) -> list[str]: 
+    # Use an f-string to properly insert user_input into the prompt
+    prompt = f"""
+    You are an intelligent assistant designed to extract relevant keywords from user input. The user will provide a request related to web scraping, and your task is to identify and return only the most important keywords that represent the fields or values that need to be scraped. Return the keywords as a list of strings.
+
+    User Input: "Hi, can you please scrape all the prices and discount values of Black Friday deals from Amazon?"
+
+    Extracted Keywords: ['Prices', 'Discount', 'Black Friday Deals']
+
+    Now, extract the keywords from the following user input:
+    "{user_input}"
+    
+    Return the result as a list of strings.
+    """
+    
+    # Generate content using the model
+    response = model.generate_content(prompt)
+    
+    # Accessing _result instead of result
+    if hasattr(response, '_result') and response._result.candidates:
+        # Extract and return only the text content (which should be a list of strings)
+        result = response._result.candidates[0].content.parts[0].text.strip()
+        print(result)
+        return result
+    else:
+        print("No valid candidates found.")
+        return []
+
+# def create_dynamic_listing_model(field_names: List[str]) -> Type[BaseModel]:
+#     """
+#     Dynamically creates a Pydantic model based on provided fields.
+#     field_name is a list of names of the fields to extract from the markdown.
+#     """
+#     # Create field definitions using aliases for Field parameters
+#     field_definitions = {field: (str, ...) for field in field_names}
+#     # Dynamically create the model with all field
+#     return create_model('DynamicListingModel', **field_definitions)
+
+
 def create_dynamic_listing_model(field_names: List[str]) -> Type[BaseModel]:
     """
     Dynamically creates a Pydantic model based on provided fields.
     field_name is a list of names of the fields to extract from the markdown.
     """
     # Create field definitions using aliases for Field parameters
+    print(field_names)
+    field_names = extract_keywords(field_names)
+    print(field_names)
     field_definitions = {field: (str, ...) for field in field_names}
+    print(field_definitions)
     # Dynamically create the model with all field
     return create_model('DynamicListingModel', **field_definitions)
-
 
 def create_listings_container_model(listing_model: Type[BaseModel]) -> Type[BaseModel]:
     """
