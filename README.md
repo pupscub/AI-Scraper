@@ -1,6 +1,6 @@
-# Rufus
+# AI Scraper
 
-Rufus is an intelligent web data extraction tool designed specifically for Retrieval-Augmented Generation (RAG) agents. In the complex landscape of web data collection, Rufus solves the critical challenge of retrieving meaningful and structured information from websites for AI and machine learning applications.
+AI-Scraper is an intelligent web data extraction tool designed specifically for Retrieval-Augmented Generation (RAG) agents. In the complex landscape of web data collection, Rufus solves the critical challenge of retrieving meaningful and structured information from websites for AI and machine learning applications.
 Traditional web scraping tools often fall short when dealing with complex website structures, nested pages, and dynamically loaded content. Rufus revolutionizes this process by providing an AI-powered solution that intelligently crawls websites, selectively extracts relevant information, and synthesizes it into clean, structured documents ready for immediate use in LLM (Large Language Model) pipelines.
 
 
